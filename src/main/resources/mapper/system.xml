@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="com.nang.springwork.dao.SystemDao">
+
+    
+    <select id="findUserByUniName" resultType="SysUser" >
+		select * from platform.SM_USER_T3 where loginName =#{loginName}
+	</select>
+	
+	<select id="findAppByUser" resultType="App" >
+		SELECT app.* 
+		FROM platform.SM_APP_T3 app,platform.SM_ROLE_T3 role
+			,platform.SM_R_ROLE_USER_T3 ru
+		WHERE app.appid=role.appid
+			 and role.roleid=ru.roleid  and app.valid=1 and app.appID>0
+			and ru.userid=#{userID}
+	</select>
+	
+	<select id="findMenusByUser" resultType="MenuObj" >
+		SELECT menu.* 
+		FROM platform.SM_OBJECT_T3 menu,platform.SM_AUTH_T3 auth,platform.SM_ROLE_T3 role
+			,platform.SM_R_ROLE_USER_T3 ru
+		WHERE menu.objectid=auth.objectid and auth.roleid = role.roleid
+			 and role.roleid=ru.roleid  and menu.valid=1 and auth.valid=1
+			and ru.userid=#{userID} and menu.appid=#{appID} 
+	</select>
+	
+	<select id="findUserResources" resultType="SysResource">
+		SELECT a.*
+		FROM shsa.SYSRESOURCE a,shsa.R_USER_RESOURCE b
+		WHERE a.id=b.resourceID
+		order by a.orderNo asc
+	</select>
+</mapper>

@@ -1,0 +1,21 @@
+
+
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/xhzb_db?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true
+    driverClassName: com.mysql.cj.jdbc.Driver
+    username: root
+    password: root123456
+
+  mvc:
+    view:
+      prefix: /views/
+      suffix: .jsp
+
+server:
+  port: 8081
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+  mapper-locations: classpath:mapper/**/*.xml
+  type-aliases-package: com.vfc.**.model

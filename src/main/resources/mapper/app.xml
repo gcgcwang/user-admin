@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper  namespace="com.nang.springwork.dao.AppDao">
+
+     
+	 <select id="findList" resultType="App"  >
+	 select b.* from
+		(SELECT a.*,rownum as rn FROM platform.SM_APP_T3 a where rownum &lt;= #{endNum} )b
+		where b.rn &gt;=  #{beginNum}
+	</select>
+	 <select id="selectTotal" resultType="long">
+		SELECT count(1) FROM platform.SM_APP_T3 
+	</select>
+</mapper>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="com.nang.springwork.dao.FhConDao">
+
+    
+    <select id="findByID" resultType="FhConVO" parameterType="java.util.Map">
+		select * from fh.fh_contract where cid =#{cid}
+	</select>
+	 <select id="findList" resultType="FhConVO" parameterType="java.util.Map">
+		select * from fh.fh_contract 
+	</select>
+</mapper>

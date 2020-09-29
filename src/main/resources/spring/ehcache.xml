@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:noNamespaceSchemaLocation="http://ehcache.org/ehcache.xsd"
+updateCheck="false">
+
+	<!-- 
+		name: 设定缓存的名称
+		eternal: 设定缓存是否永不过期 
+		timeToIdleSeconds: 空闲多长时间自动清理缓存
+		timeToLiveSeconds: 缓存有效期
+		overflowToDisk: 设定当内存缓存溢出的时候是否将过期的element缓存到磁盘上
+		diskPersistent: 在VM重启的时候是否持久化磁盘缓存，默认是false
+		diskExpiryThreadIntervalSeconds: 自动清理失效缓存线程执行间隔
+	-->
+	
+	
+	<diskStore path="java.io.tmpdir"/>
+
+	<defaultCache eternal="false" maxElementsInMemory="10000"
+		timeToIdleSeconds="3600" timeToLiveSeconds="3600" overflowToDisk="false"
+		diskPersistent="false" diskExpiryThreadIntervalSeconds="120" 
+		memoryStoreEvictionPolicy="LRU" />
+		
+    <cache name="ehcache"
+        maxElementsInMemory="10000"
+        eternal="false"
+        overflowToDisk="true"
+        timeToIdleSeconds="3600"
+        timeToLiveSeconds="3600"/>
+</ehcache>
