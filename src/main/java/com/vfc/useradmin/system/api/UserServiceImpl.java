@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.alibaba.fastjson.JSON;
-import com.vfc.useradmin.api.UserService;
+import com.vfc.useradmin.system.api.UserService;
 import com.vfc.useradmin.system.bo.SystemBO;
 import com.vfc.useradmin.system.dao.SystemDao;
 

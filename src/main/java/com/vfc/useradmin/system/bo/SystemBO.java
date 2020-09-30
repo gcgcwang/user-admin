@@ -11,7 +11,6 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
-import com.alibaba.dubbo.container.Main;
 import com.vfc.useradmin.system.po.SystemPO;
 import com.vfc.useradmin.system.vo.App;
 import com.vfc.useradmin.system.vo.MenuVO;

@@ -9,13 +9,12 @@ spring:
 
   mvc:
     view:
-      prefix: /views/
+      prefix: /pages/views/
       suffix: .jsp
-
 server:
-  port: 8081
+  port: 8083
 mybatis:
   configuration:
     map-underscore-to-camel-case: true
   mapper-locations: classpath:mapper/**/*.xml
-  type-aliases-package: com.vfc.**.model
+  type-aliases-package: com.vfc.**.model,com.vfc.**.vo

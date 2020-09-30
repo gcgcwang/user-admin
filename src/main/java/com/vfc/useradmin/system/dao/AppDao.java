@@ -5,8 +5,9 @@ import java.util.List;
 import com.vfc.useradmin.system.common.MyBatisDao;
 import com.vfc.useradmin.system.vo.App;
 import com.vfc.useradmin.system.vo.Pager;
+import org.apache.ibatis.annotations.Mapper;
 
-@MyBatisDao
+@Mapper
 public interface AppDao {
 	
 	public long selectTotal();

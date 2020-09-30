@@ -4,8 +4,9 @@ import java.util.List;
 
 import com.vfc.useradmin.system.common.MyBatisDao;
 import com.vfc.useradmin.system.vo.FhConVO;
+import org.apache.ibatis.annotations.Mapper;
 
-@MyBatisDao
+@Mapper
 public interface FhConDao {
 	
 	public FhConVO findByID(String cid);

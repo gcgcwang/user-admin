@@ -10,7 +10,6 @@ import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
-import com.alibaba.dubbo.common.utils.Assert;
 import com.vfc.useradmin.jpa.GeneralSqlGenerator;
 import com.vfc.useradmin.system.vo.App;
 import com.vfc.useradmin.system.vo.MenuVO;

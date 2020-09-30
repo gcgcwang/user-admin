@@ -17,7 +17,7 @@
 			and ru.userid=#{userID}
 	</select>
 	
-	<select id="findMenusByUser" resultType="MenuObj" >
+	<select id="findMenusByUser" resultType="MenuVO" >
 		SELECT menu.* 
 		FROM platform.SM_OBJECT_T3 menu,platform.SM_AUTH_T3 auth,platform.SM_ROLE_T3 role
 			,platform.SM_R_ROLE_USER_T3 ru

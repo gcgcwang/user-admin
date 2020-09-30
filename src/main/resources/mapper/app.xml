@@ -4,7 +4,7 @@
 <mapper  namespace="com.nang.springwork.dao.AppDao">
 
      
-	 <select id="findList" resultType="App"  >
+	 <select id="findList" resultType="app"  >
 	 select b.* from
 		(SELECT a.*,rownum as rn FROM platform.SM_APP_T3 a where rownum &lt;= #{endNum} )b
 		where b.rn &gt;=  #{beginNum}
